@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GoogleMap : MonoBehaviour
 {
+	GameObject info;
+	PersistentInfo myInfo;
 	public enum MapType
 	{
 		RoadMap,
@@ -21,7 +23,11 @@ public class GoogleMap : MonoBehaviour
 	public GoogleMapPath[] paths;
 	
 	void Start() {
-		if(loadOnStart) Refresh();	
+		info = GameObject.Find ("Info");
+		myInfo = info.GetComponent<PersistentInfo> ();
+		centerLocation.latitude = myInfo.latitude;
+		centerLocation.longitude = myInfo.longitude;
+		if(loadOnStart) Refresh();
 	}
 	
 	public void Refresh() {
@@ -96,7 +102,7 @@ public enum GoogleMapColor
 	red,
 	white
 }
-
+	
 [System.Serializable]
 public class GoogleMapLocation
 {
