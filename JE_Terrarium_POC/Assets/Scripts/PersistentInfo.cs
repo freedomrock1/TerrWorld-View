@@ -4,9 +4,9 @@ using System.Collections;
 public class PersistentInfo : MonoBehaviour {
 
 	public string city;
-	public int buildingNum;
 	public float latitude;
 	public float longitude;
+	public int buildingNum;
 
 	// Use this for initialization
 	void Start () {

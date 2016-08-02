@@ -25,6 +25,7 @@ public class GoogleMap : MonoBehaviour
 	void Start() {
 		info = GameObject.Find ("Info");
 		myInfo = info.GetComponent<PersistentInfo> ();
+		centerLocation.address = myInfo.city;
 		centerLocation.latitude = myInfo.latitude;
 		centerLocation.longitude = myInfo.longitude;
 		if(loadOnStart) Refresh();
